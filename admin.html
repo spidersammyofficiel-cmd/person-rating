@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إدارة الموقع — محمد الساخي</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">إدارة الموقع <span>★</span></div>
+  <a class="back-link" href="index.html">العودة للموقع</a>
+</header>
+
+<main class="container admin-container">
+  <section id="loginCard" class="card admin-card">
+    <h1>دخول المشرف</h1>
+    <p class="muted">هذه الصفحة مخصصة للمشرفين المضافين إلى قاعدة البيانات.</p>
+    <form id="loginForm">
+      <label>البريد الإلكتروني<input id="emailInput" type="email" required autocomplete="username"></label>
+      <label>كلمة المرور<input id="passwordInput" type="password" required autocomplete="current-password"></label>
+      <button class="primary-btn" type="submit">تسجيل الدخول</button>
+      <div id="loginMessage" class="form-message"></div>
+    </form>
+  </section>
+
+  <section id="adminPanel" class="hidden">
+    <div class="admin-toolbar card">
+      <div>
+        <h1>لوحة الإدارة</h1>
+        <p class="muted">إدارة التعليقات والبلاغات وبيانات الملف.</p>
+      </div>
+      <button id="logoutBtn" class="secondary-btn">تسجيل الخروج</button>
+    </div>
+
+    <section class="card admin-card">
+      <h2>بيانات الشخص</h2>
+      <form id="profileForm" class="profile-admin-form">
+        <label>الاسم<input id="adminName" type="text" maxlength="120" required></label>
+        <label>رابط الصورة<input id="adminImage" type="text" maxlength="500" required></label>
+        <button class="primary-btn" type="submit">حفظ البيانات</button>
+        <div id="profileMessage" class="form-message"></div>
+      </form>
+    </section>
+
+    <section class="card admin-card">
+      <div class="section-heading">
+        <div><h2>التعليقات</h2><p class="muted">يمكنك إخفاء التعليق أو إظهاره أو حذفه.</p></div>
+        <button id="refreshBtn" class="secondary-btn">تحديث</button>
+      </div>
+      <div id="adminReviews"></div>
+    </section>
+
+    <section class="card admin-card">
+      <h2>البلاغات</h2>
+      <div id="adminReports"></div>
+    </section>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

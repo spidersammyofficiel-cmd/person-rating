@@ -1,0 +1,36 @@
+*{box-sizing:border-box}
+:root{--bg:#f4f6fb;--card:#fff;--text:#182033;--muted:#778298;--border:#e5e8ef;--primary:#635bff;--star:#ffb020;--danger:#d64545;--success:#269d55}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;transition:.2s}
+.topbar{height:68px;background:var(--card);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 max(18px,calc((100% - 900px)/2));position:sticky;top:0;z-index:5}
+.brand{font-size:21px;font-weight:800}.brand span{color:var(--star)}
+.icon-btn{width:42px;height:42px;border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:11px;cursor:pointer;font-size:18px}
+.container{width:min(900px,calc(100% - 18px));margin:22px auto 45px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;margin-bottom:18px;box-shadow:0 14px 40px #27324d0d}
+.profile{text-align:center}.profile>img{width:125px;height:125px;border-radius:50%;object-fit:cover;box-shadow:0 7px 25px #0002}
+.profile h1{margin:16px 0 5px;font-size:29px}.muted{color:var(--muted)}
+.summary{display:flex;justify-content:center;align-items:center;gap:14px;direction:ltr;margin-top:22px}.summary strong{font-size:42px}.summary small{color:var(--muted);direction:rtl}
+.stars{font-size:23px;letter-spacing:2px;color:var(--star)}
+.review-form{text-align:center}.review-form h2,.comments h2{margin:0 0 6px}.review-form p{margin:0}
+.star-picker{display:flex;justify-content:center;direction:ltr;margin:20px 0 5px}
+.star-picker button{border:0;background:transparent;color:#cdd3df;font-size:43px;cursor:pointer;padding:1px;transition:.12s}
+.star-picker button:hover,.star-picker button.active{color:var(--star);transform:translateY(-2px)}
+.selected-label{color:var(--muted);font-size:13px;min-height:20px}
+textarea{display:block;width:100%;min-height:120px;margin-top:17px;padding:14px;border:1px solid var(--border);border-radius:13px;background:var(--bg);color:var(--text);font:inherit;resize:vertical;outline:none}
+textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px #635bff1c}
+.form-footer{display:flex;align-items:center;justify-content:space-between;margin-top:10px}.form-footer small{color:var(--muted)}
+.primary-btn{border:0;background:var(--primary);color:#fff;border-radius:11px;padding:12px 22px;font-weight:700;cursor:pointer}.primary-btn:disabled{opacity:.65;cursor:wait}
+.form-message{min-height:20px;margin-top:10px;font-size:13px}.form-message.error{color:var(--danger)}.form-message.success{color:var(--success)}
+.section-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.section-heading p{margin:0}
+select{padding:9px;border:1px solid var(--border);border-radius:9px;background:var(--card);color:var(--text)}
+.comment{border-top:1px solid var(--border);padding:19px 0}.comment:first-child{border-top:0}
+.comment-top{display:flex;justify-content:space-between;gap:10px}.comment-author{font-weight:800}.comment-date{font-size:11px;color:var(--muted)}
+.comment-stars{color:var(--star);direction:ltr;margin:7px 0}.comment-text{line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere}
+.report-btn{border:0;background:none;color:var(--muted);cursor:pointer;font:inherit;font-size:12px}.report-btn:hover{color:var(--danger)}
+.empty-state{text-align:center;color:var(--muted);border-top:1px solid var(--border);padding:35px 0 15px}.empty-state div{font-size:35px}.empty-state h3{color:var(--text);margin:7px 0}
+.error-box{padding:15px;border-radius:10px;background:#fff1f1;color:var(--danger)}
+footer{text-align:center;color:var(--muted);font-size:11px}
+body.dark{--bg:#0e1320;--card:#171d2c;--text:#f2f5fb;--muted:#9ca7bb;--border:#2a3347}
+@media(max-width:600px){.card{padding:21px 16px;border-radius:17px}.section-heading{align-items:flex-start;flex-direction:column;gap:12px}.section-heading select{width:100%}.star-picker button{font-size:36px}}
+.top-actions{display:flex;align-items:center;gap:8px}.admin-link,.back-link{color:var(--primary);text-decoration:none;font-size:13px;font-weight:700;padding:9px 11px;border:1px solid var(--border);border-radius:10px}.admin-link:hover,.back-link:hover{background:var(--bg)}
+.hidden{display:none!important}.admin-container{max-width:980px}.admin-card h1{margin-top:0}.admin-card label{display:block;font-weight:700;margin-bottom:13px}.admin-card input{display:block;width:100%;margin-top:7px;padding:12px;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--text);font:inherit;outline:none}.admin-card input:focus{border-color:var(--primary);box-shadow:0 0 0 3px #635bff1c}.admin-card form .primary-btn{margin-top:5px}.admin-toolbar{display:flex;justify-content:space-between;align-items:center}.admin-toolbar h1{margin:0 0 5px}.secondary-btn,.danger-btn{border:1px solid var(--border);background:var(--card);color:var(--text);border-radius:10px;padding:9px 13px;cursor:pointer;font:inherit;font-weight:700}.danger-btn{border-color:#f0bcbc;color:var(--danger)}.admin-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.admin-item{border-top:1px solid var(--border);padding:18px 0}.admin-item:first-child{border-top:0}.admin-item.is-hidden{opacity:.72}.admin-item-meta{display:flex;justify-content:space-between;gap:12px;font-size:12px}.admin-item-meta span{color:var(--muted)}.profile-admin-form{max-width:650px}
+@media(max-width:600px){.topbar{height:auto;min-height:62px;padding:10px 12px}.brand{font-size:18px}.top-actions{gap:5px}.admin-link{font-size:12px;padding:8px}.icon-btn{width:38px;height:38px}.container{width:min(100% - 12px,900px);margin-top:12px}.profile>img{width:105px;height:105px}.profile h1{font-size:25px}.summary strong{font-size:35px}.review-form textarea{min-height:105px}.form-footer{gap:10px;align-items:stretch;flex-direction:column-reverse}.primary-btn{width:100%;min-height:44px}.star-picker{margin-top:16px}.star-picker button{font-size:34px}.admin-toolbar{align-items:stretch;flex-direction:column;gap:12px}.admin-toolbar .secondary-btn{width:100%}.admin-item-meta{align-items:flex-start;flex-direction:column;gap:4px}.admin-actions button{flex:1;min-height:42px}}

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تجربتي — محمد الساخي</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">تجربتي <span>★</span></div>
+  <div class="top-actions"><a class="admin-link" href="admin.html">الإدارة</a><button id="themeBtn" class="icon-btn" aria-label="الوضع الليلي">☾</button></div>
+</header>
+
+<main class="container">
+  <section class="card profile">
+    <img id="personImage" src="person.svg" alt="صورة الشخص">
+    <h1 id="personName">...</h1>
+    <p class="muted">شارك تجربتك في التعامل مع هذا الشخص</p>
+
+    <div class="summary">
+      <strong id="averageRating">0.0</strong>
+      <div>
+        <div id="summaryStars" class="stars">☆☆☆☆☆</div>
+        <small><span id="ratingCount">0</span> تقييم</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="card review-form">
+    <h2>كيف كانت تجربتك؟</h2>
+    <p class="muted">اختر تقييمًا من نجمة إلى خمس نجوم.</p>
+
+    <div id="starPicker" class="star-picker">
+      <button data-rating="1">★</button>
+      <button data-rating="2">★</button>
+      <button data-rating="3">★</button>
+      <button data-rating="4">★</button>
+      <button data-rating="5">★</button>
+    </div>
+
+    <div id="selectedLabel" class="selected-label">لم تختر تقييمًا بعد</div>
+
+    <textarea id="commentInput" maxlength="500"
+      placeholder="اكتب ملاحظتك أو تعليقك هنا..."></textarea>
+
+    <div class="form-footer">
+      <small id="charCount">0 / 500</small>
+      <button id="submitBtn" class="primary-btn">إرسال التقييم</button>
+    </div>
+    <div id="formMessage" class="form-message"></div>
+  </section>
+
+  <section class="card comments">
+    <div class="section-heading">
+      <div>
+        <h2>آراء الزوار</h2>
+        <p class="muted">التعليقات المنشورة</p>
+      </div>
+      <select id="sortSelect">
+        <option value="newest">الأحدث</option>
+        <option value="highest">الأعلى تقييمًا</option>
+        <option value="lowest">الأقل تقييمًا</option>
+      </select>
+    </div>
+
+    <div id="commentsList"></div>
+    <div id="emptyState" class="empty-state">
+      <div>💬</div>
+      <h3>لا توجد تعليقات بعد</h3>
+      <p>كن أول شخص يشارك تجربته.</p>
+    </div>
+  </section>
+
+  <footer>احترم الآخرين ولا تنشر معلومات شخصية أو مسيئة.</footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
